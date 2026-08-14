@@ -16,27 +16,36 @@
     let errorMessage = '';
     let loading = false;
 
-  async function login() {
-    console.log("LOGIN BUTTON CLICKED");
-
+async function login() {
     errorMessage = '';
     loading = true;
 
+    console.log('LOGIN BUTTON CLICKED');
+
     const { data, error } = await supabase.auth.signInWithPassword({
-        email,
+        email: email.trim(),
         password
     });
 
-    console.log("SUPABASE RESPONSE:", data, error);
+    console.log('SUPABASE RESPONSE:', data, error);
 
     if (error) {
+        console.error('LOGIN ERROR:', error);
         errorMessage = error.message;
         loading = false;
         return;
     }
 
-    if (data.user) {
-        goto('/admin');
+    if (data.user && data.session) {
+        console.log('LOGIN SUCCESS');
+        console.log('USER:', data.user.email);
+        console.log('SESSION EXISTS:', !!data.session);
+
+        await goto('/admin');
+    } else {
+        console.error('NO SESSION CREATED');
+        errorMessage = 'Login succeeded, but no session was created.';
+        loading = false;
     }
 }
 </script>
