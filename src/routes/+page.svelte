@@ -238,7 +238,7 @@
     .brand {
         position: absolute;
 
-        top: 200px;
+        top: 180px;
         left: 50%;
 
         width: 100%;
@@ -297,13 +297,13 @@ h1 {
     transform: translateY(420px);
 }
 .content :global(.view-more-button) {
-    transform: translateY(580px);
+    transform: translateY(400px);
 }
 
 
 
 .content :global(.library) {
-    transform: translateY(550px);
+    transform: translateY(400px);
 }
 
 }
