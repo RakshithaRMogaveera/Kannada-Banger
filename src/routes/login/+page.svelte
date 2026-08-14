@@ -15,37 +15,32 @@ import { createBrowserClient } from '@supabase/ssr';
     let password = '';
     let errorMessage = '';
     let loading = false;
-
 async function login() {
     errorMessage = '';
     loading = true;
-
-    console.log('LOGIN BUTTON CLICKED');
 
     const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password
     });
 
-    console.log('SUPABASE RESPONSE:', data, error);
-
     if (error) {
-        console.error('LOGIN ERROR:', error);
         errorMessage = error.message;
         loading = false;
+
+        alert(`Login failed: ${error.message}`);
         return;
     }
 
     if (data.user && data.session) {
-        console.log('LOGIN SUCCESS');
-        console.log('USER:', data.user.email);
-        console.log('SESSION EXISTS:', !!data.session);
+        alert('Login successful! Welcome to Kannada Banger Admin.');
 
         await goto('/admin');
     } else {
-        console.error('NO SESSION CREATED');
         errorMessage = 'Login succeeded, but no session was created.';
         loading = false;
+
+        alert('Login failed. No session was created.');
     }
 }
 </script>
