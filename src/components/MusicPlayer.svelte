@@ -622,32 +622,37 @@ localStorage.setItem(
     </div>
 
     <div class="controls">
-        <button
-            class="skip-button"
-            aria-label="Previous song"
-            type="button"
-            onclick={previousSong}
-        >
-            |◀
-        </button>
 
-        <button
-            class="play-button"
-            onclick={togglePlay}
-            aria-label={isPlaying ? 'Pause song' : 'Play song'}
-            type="button"
-        >
-            {isPlaying ? '❚❚' : '▶'}
-        </button>
+    <button
+        class="skip-button"
+        aria-label="Previous song"
+        type="button"
+        onclick={previousSong}
+    >
+        <span class="previous-icon"></span>
+    </button>
 
-        <button
-            class="skip-button"
-            aria-label="Next song"
-            type="button"
-            onclick={() => nextSong(true)}
-        >
-            ▶|
-        </button>
+    <button
+        class="play-button"
+        onclick={togglePlay}
+        aria-label={isPlaying ? 'Pause song' : 'Play song'}
+        type="button"
+    >
+        {#if isPlaying}
+            <span class="pause-icon"></span>
+        {:else}
+            <span class="play-icon"></span>
+        {/if}
+    </button>
+
+    <button
+        class="skip-button"
+        aria-label="Next song"
+        type="button"
+        onclick={() => nextSong(true)}
+    >
+        <span class="next-icon"></span>
+    </button>
 
         <div class="volume-control">
             <button
@@ -893,24 +898,94 @@ localStorage.setItem(
     .play-button:hover {
         transform: scale(1.06);
     }
+.play-icon {
+    width: 0;
+    height: 0;
 
-    .skip-button {
-      width: 26px;
+    margin-left: 3px;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 11px solid currentColor;
+}
+
+.pause-icon {
+    width: 10px;
+    height: 14px;
+
+    border-left: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+}
+   .skip-button {
+    width: 26px;
     height: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background: transparent;
-        color: white;
-        font-size: 14px;
-        opacity: 0.85;
-        cursor: pointer;
-        transition:
-            transform 0.2s ease,
-            opacity 0.2s ease;
-    }
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    color: white;
+    opacity: 0.85;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+.previous-icon,
+.next-icon {
+    position: relative;
+    width: 15px;
+    height: 14px;
+    display: block;
+}
+
+.previous-icon::before,
+.next-icon::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+.previous-icon::after,
+.next-icon::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+    border-radius: 1px;
+}
+
+/* Previous */
+.previous-icon::before {
+    left: 1px;
+    border-right: 7px solid currentColor;
+}
+
+.previous-icon::after {
+    right: 1px;
+}
+
+/* Next */
+.next-icon::before {
+    right: 1px;
+    border-left: 7px solid currentColor;
+}
+
+.next-icon::after {
+    left: 1px;
+}
     .skip-button:hover {
         opacity: 1;
         transform: scale(1.1);
@@ -1524,11 +1599,10 @@ localStorage.setItem(
         font-size: 14px;
     }
 
-    .skip-button {
-        width: 22px;
-        height: 22px;
-        font-size: 12px;
-    }
+  .skip-button {
+    width: 22px;
+    height: 22px;
+}
 
     .volume-button {
         width: 23px;
