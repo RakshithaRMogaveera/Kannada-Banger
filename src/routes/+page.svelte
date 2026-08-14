@@ -220,7 +220,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
 
         gap: 32px;
 
@@ -238,7 +238,7 @@
     .brand {
         position: absolute;
 
-        top: 240px;
+        top: 200px;
         left: 50%;
 
         width: 100%;
@@ -294,16 +294,16 @@ h1 {
 .content :global(.player) {
     width: 82vw;
     max-width: 520px;
-    transform: translateY(320px);
+    transform: translateY(420px);
 }
 .content :global(.view-more-button) {
-    transform: translateY(320px);
+    transform: translateY(580px);
 }
 
 
 
 .content :global(.library) {
-    transform: translateY(300px);
+    transform: translateY(550px);
 }
 
 }
