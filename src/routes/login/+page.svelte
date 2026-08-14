@@ -25,11 +25,16 @@
             password
         });
 
-        if (error) {
-            errorMessage = error.message;
-            loading = false;
-            return;
-        }
+       if (error) {
+    console.log('SUPABASE LOGIN ERROR:', error);
+    console.log('ERROR MESSAGE:', error.message);
+    console.log('ERROR CODE:', error.code);
+    console.log('ERROR STATUS:', error.status);
+
+    errorMessage = error.message;
+    loading = false;
+    return;
+}
 
         if (data.user) {
             goto('/admin');
