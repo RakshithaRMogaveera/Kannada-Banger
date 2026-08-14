@@ -150,4 +150,173 @@
         opacity: 0.6;
         letter-spacing: 1px;
     }
+    .background {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url('/images/bg1.png');
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* =========================================
+   TABLET / MOBILE RESPONSIVE - 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .background {
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0.35)
+            ),
+            url('/images/bg1.png');
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+
+    /* =========================
+       CLOCK
+    ========================= */
+
+    .clock {
+        top: 28px;
+        left: 24px;
+
+        gap: 7px;
+
+        font-size: 13px;
+        letter-spacing: 0.8px;
+    }
+
+    .clock-icon {
+        font-size: 19px;
+    }
+
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .content {
+        position: relative;
+
+        width: 100%;
+        min-height: 100vh;
+
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 32px;
+
+        padding: 80px 16px 50px;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       BRAND
+       TOP CENTER
+    ========================= */
+
+    .brand {
+        position: absolute;
+
+        top: 240px;
+        left: 50%;
+
+        width: 100%;
+
+        transform: translateX(-50%);
+
+        color: white;
+
+        text-align: center;
+
+        z-index: 3;
+    }
+
+
+    .eyebrow {
+        margin: 0 0 12px;
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        opacity: 0.7;
+
+        white-space: nowrap;
+    }
+
+
+h1 {
+    margin: 0;
+    font-size: clamp(58px, 18vw, 96px);
+    line-height: 1.18;
+    letter-spacing: -2px;
+    white-space: normal;
+    text-wrap: balance;
+    
+}
+
+    .tagline {
+        margin: 14px 0 0;
+
+        font-size: 13px;
+
+        letter-spacing: 0.8px;
+
+        opacity: 0.7;
+    }
+
+
+    /* =========================
+       MUSIC PLAYER
+    ========================= */
+
+.content :global(.player) {
+    width: 82vw;
+    max-width: 520px;
+    transform: translateY(320px);
+}
+.content :global(.view-more-button) {
+    transform: translateY(320px);
+}
+
+
+
+.content :global(.library) {
+    transform: translateY(300px);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 </style>

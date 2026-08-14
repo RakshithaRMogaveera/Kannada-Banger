@@ -197,13 +197,154 @@
         font-size: 13px;
     }
 
-    @media (max-width: 500px) {
-        .login-card {
-            padding: 30px 24px;
-        }
+  /* =========================================
+   MOBILE RESPONSIVE - 480px
+========================================= */
 
-        h1 {
-            font-size: 30px;
-        }
+@media (max-width: 480px) {
+
+    :global(html),
+    :global(body) {
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
     }
+
+    .login-page {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 20px 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 12px 30px rgba(80, 55, 35, 0.08);
+    }
+
+    .eyebrow {
+        margin-bottom: 8px;
+
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        margin: 9px 0 24px;
+
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    form {
+        gap: 8px;
+    }
+
+    label {
+        margin-top: 7px;
+
+        font-size: 13px;
+    }
+
+    input {
+        width: 100%;
+
+        padding: 12px 12px;
+
+        border-radius: 9px;
+
+        font-size: 13px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+
+        margin-top: 13px;
+
+        padding: 13px;
+
+        border-radius: 9px;
+
+        font-size: 14px;
+    }
+
+    .error {
+        margin: 7px 0 0;
+
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+/* =========================================
+   TABLET RESPONSIVE - 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .login-page {
+        padding: 30px 24px;
+    }
+
+    .login-card {
+        max-width: 460px;
+        padding: 36px;
+        border-radius: 20px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 3.5px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        margin: 10px 0 28px;
+        font-size: 14px;
+    }
+
+    form {
+        gap: 9px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        padding: 13px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 14px;
+    }
+
+    .error {
+        font-size: 12px;
+    }
+}
 </style>

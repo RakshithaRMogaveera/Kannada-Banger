@@ -328,43 +328,192 @@ let totalCategories = $state(0);
         line-height: 1.5;
     }
 
+/* =========================================
+   MOBILE RESPONSIVE - 480px
+========================================= */
 
-    @media (max-width: 700px) {
+@media (max-width: 480px) {
 
-        .admin-page {
-            padding: 30px 20px;
-        }
-
-
-        .header {
-            margin-bottom: 30px;
-        }
-
-
-        h1 {
-            font-size: 32px;
-        }
-
-
-        .subtitle {
-            font-size: 15px;
-        }
-
-
-        .stats,
-        .actions {
-            grid-template-columns: 1fr;
-        }
-
-
-        .stat-card {
-            padding: 22px;
-        }
-
-
-        .action-card {
-            padding: 24px;
-        }
-
+    .admin-page {
+        min-height: 100vh;
+        padding: 30px 18px;
     }
+
+    .header {
+        margin-bottom: 28px;
+    }
+
+    .eyebrow {
+        margin-bottom: 7px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        margin-top: 8px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 22px;
+    }
+
+    .stat-card {
+        gap: 14px;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 21px;
+    }
+
+    .stat-card p {
+        margin-bottom: 4px;
+        font-size: 12px;
+    }
+
+    .stat-card h2 {
+        font-size: 26px;
+    }
+
+    /* =========================
+       ACTIONS
+    ========================= */
+
+    .actions {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .action-card {
+        padding: 21px;
+        border-radius: 15px;
+    }
+
+    .action-card > span {
+        margin-bottom: 14px;
+        font-size: 27px;
+    }
+
+    .action-card h3 {
+        margin-bottom: 6px;
+        font-size: 17px;
+    }
+
+    .action-card p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+}
+/* =========================================
+   TABLET RESPONSIVE - 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    .admin-page {
+        padding: 40px 30px;
+    }
+
+    .header {
+        margin-bottom: 34px;
+    }
+
+    .eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+        letter-spacing: 3.5px;
+    }
+
+    h1 {
+        font-size: 38px;
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        margin-top: 9px;
+        font-size: 15px;
+    }
+
+    .dashboard {
+        width: 100%;
+    }
+
+    /* STATS */
+
+    .stats {
+        gap: 16px;
+        margin-bottom: 26px;
+    }
+
+    .stat-card {
+        gap: 16px;
+        padding: 24px;
+        border-radius: 17px;
+    }
+
+    .stat-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 13px;
+        font-size: 23px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+    .stat-card h2 {
+        font-size: 28px;
+    }
+
+    /* ACTIONS */
+
+    .actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .action-card {
+        padding: 24px;
+        border-radius: 17px;
+    }
+
+    .action-card > span {
+        margin-bottom: 17px;
+        font-size: 29px;
+    }
+
+    .action-card h3 {
+        margin-bottom: 7px;
+        font-size: 18px;
+    }
+
+    .action-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+}
 </style>
