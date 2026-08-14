@@ -1,15 +1,15 @@
 <script lang="ts">
-    import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
     import { goto } from '$app/navigation';
     import {
         PUBLIC_SUPABASE_URL,
         PUBLIC_SUPABASE_PUBLISHABLE_KEY
     } from '$env/static/public';
 
-    const supabase = createClient(
-        PUBLIC_SUPABASE_URL,
-        PUBLIC_SUPABASE_PUBLISHABLE_KEY
-    );
+  const supabase = createBrowserClient(
+    PUBLIC_SUPABASE_URL,
+    PUBLIC_SUPABASE_PUBLISHABLE_KEY
+);
 
     let email = '';
     let password = '';
