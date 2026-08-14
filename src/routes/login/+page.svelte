@@ -16,30 +16,29 @@
     let errorMessage = '';
     let loading = false;
 
-    async function login() {
-        errorMessage = '';
-        loading = true;
+  async function login() {
+    console.log("LOGIN BUTTON CLICKED");
 
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password
-        });
+    errorMessage = '';
+    loading = true;
 
-       if (error) {
-    console.log('SUPABASE LOGIN ERROR:', error);
-    console.log('ERROR MESSAGE:', error.message);
-    console.log('ERROR CODE:', error.code);
-    console.log('ERROR STATUS:', error.status);
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+    });
 
-    errorMessage = error.message;
-    loading = false;
-    return;
-}
+    console.log("SUPABASE RESPONSE:", data, error);
 
-        if (data.user) {
-            goto('/admin');
-        }
+    if (error) {
+        errorMessage = error.message;
+        loading = false;
+        return;
     }
+
+    if (data.user) {
+        goto('/admin');
+    }
+}
 </script>
 
 <svelte:head>
