@@ -77,7 +77,7 @@ let showLibrary = $state(false);
                 console.error(
                     'Error loading categories:',
                     categoryError
-                );
+            );
             } else {
                 categoryList =
                     categoryData

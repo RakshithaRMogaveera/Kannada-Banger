@@ -150,19 +150,7 @@
         opacity: 0.6;
         letter-spacing: 1px;
     }
-    .background {
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.35)
-        ),
-        url('/images/bg1.png');
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
+  
 
 
 
